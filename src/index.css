@@ -89,5 +89,22 @@ button:focus-visible {
 }
 
 .todo:hover {
-  border-color: rgba(255, 255, 255, 0.6);
+  /* border-color: rgba(255, 255, 255, 0.6); */
+  cursor: pointer;
+}
+
+.completed {
+  color: rgb(62, 198, 62);
+}
+
+.notcompleted {
+  color: rgb(175, 26, 26);
+}
+
+.done {
+  border-color: rgb(62, 198, 62);
+}
+
+.notdone {
+  border-color: rgb(175, 26, 26);
 }

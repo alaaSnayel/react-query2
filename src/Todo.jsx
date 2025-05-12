@@ -11,12 +11,31 @@ export default function Todo() {
   });
   console.log(data);
 
+  if (isLoading) {
+    return (
+      <div className="loading">
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
+
   return (
     <div className="container">
       {data &&
         data.map((todo) => (
-          <div className="todo" key={todo.id}>
+          <div
+            className={`todo ${todo.completed ? "done" : "notdone"}`}
+            key={todo.id}
+          >
             {todo.title}
+            <p style={{ marginTop: "1em" }}>
+              Status:{" "}
+              <span
+                className={`${todo.completed ? "completed" : "notcompleted"}`}
+              >
+                {todo.completed ? "Completed" : "Not Completed"}
+              </span>
+            </p>
           </div>
         ))}
     </div>
